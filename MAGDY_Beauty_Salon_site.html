@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <title>MAGDY Beauty Salon | مجدي بيوتي صالون</title>
+  <meta name="description" content="تابع MAGDY Beauty Salon واحجز موعدك وتعرّف على موقعنا.">
+  <style>
+    :root { --gold:#d7b34a; --gold2:#f4dc88; --bg:#090909; --panel:#151515; --muted:#bdb7a8; }
+    * { box-sizing:border-box; }
+    body {
+      margin:0; min-height:100vh; color:#fff;
+      font-family:Tahoma, Arial, sans-serif;
+      background: radial-gradient(ellipse at 50% 0%, #302714 0%, #111 38%, var(--bg) 75%);
+      display:flex; justify-content:center; padding:28px 16px;
+    }
+    .wrap { width:100%; max-width:470px; text-align:center; }
+    .brand {
+      width:104px; height:104px; margin:8px auto 14px; border:1px solid var(--gold);
+      border-radius:50%; display:grid; place-items:center; color:var(--gold2);
+      font-family:Georgia,serif; font-size:27px; font-weight:bold;
+      box-shadow:0 0 28px #d7b34a22;
+    }
+    h1 { margin:8px 0 5px; color:var(--gold2); font-size:27px; letter-spacing:.5px; }
+    .subtitle { margin:0 0 24px; color:var(--muted); font-size:14px; }
+    .section-title { color:var(--gold); font-size:13px; margin:22px 0 10px; }
+    .links { display:grid; grid-template-columns:1fr 1fr; gap:11px; }
+    a.button, button.button {
+      min-height:58px; display:flex; align-items:center; justify-content:center; gap:9px;
+      padding:13px 10px; border:1px solid #6f5b2a; border-radius:13px;
+      background:linear-gradient(145deg,#1d1d1d,#101010); color:#fff;
+      text-decoration:none; font-size:15px; font-weight:600;
+      transition:transform .15s, border-color .15s;
+    }
+    a.button:active, button.button:active { transform:scale(.98); }
+    .icon { font-size:20px; }
+    .wide { grid-column:1/-1; }
+    .gold { background:linear-gradient(135deg,#e4c66a,#b58b2f)!important; color:#17130a!important; border:0!important; }
+    .note { color:#aaa; font-size:12px; line-height:1.8; margin:18px 8px 0; }
+    .footer { margin-top:28px; color:#766b50; font-size:11px; }
+    .copy-row { display:flex; gap:8px; align-items:center; }
+    .copy-row .button { flex:1; cursor:pointer; font-family:inherit; }
+    @media (max-width:360px) { .links{grid-template-columns:1fr;} .wide{grid-column:auto;} }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="brand" aria-label="MAGDY">MAGDY</div>
+    <h1>MAGDY Beauty Salon</h1>
+    <p class="subtitle">مسؤوليتنا تسريحتك ✨</p>
+
+    <div class="section-title">تابعنا على منصات التواصل</div>
+    <div class="links">
+      <a class="button" href="https://www.instagram.com/magdy_beauty_salon?cplk=MXE2M3N3c3BvYmY5cw==" target="_blank" rel="noopener"><span class="icon">📸</span> Instagram</a>
+      <a class="button" href="https://www.facebook.com/share/19xL77cxRE/" target="_blank" rel="noopener"><span class="icon">📘</span> Facebook</a>
+      <a class="button" href="https://www.tiktok.com/@magdy_beauty_salon?_r=1&_t=ZS-9BFCishEv2q" target="_blank" rel="noopener"><span class="icon">🎵</span> TikTok</a>
+      <a class="button" href="https://maps.app.goo.gl/d7w4hKrxj3Q6jGAo7" target="_blank" rel="noopener"><span class="icon">📍</span> موقع الصالون</a>
+      <a class="button gold wide" href="https://wa.me/201287103639" target="_blank" rel="noopener"><span class="icon">💬</span> احجز موعدك على WhatsApp</a>
+    </div>
+
+    <div class="section-title">الدفع عبر InstaPay</div>
+    <div class="copy-row">
+      <button class="button" type="button" onclick="copyPayment()">📋 نسخ رقم InstaPay</button>
+      <a class="button" href="https://www.instapay.eg/" target="_blank" rel="noopener">فتح InstaPay ↗</a>
+    </div>
+    <p class="note">رقم InstaPay: <strong dir="ltr">01281365811</strong><br>انسخ الرقم واستخدمه داخل تطبيق InstaPay للتحويل. تأكد من اسم المستفيد قبل تأكيد أي عملية دفع.</p>
+
+    <p class="footer">© MAGDY Beauty Salon</p>
+  </main>
+  <script>
+    function copyPayment() {
+      const number = "01281365811";
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(number).then(() => alert("تم نسخ رقم InstaPay"));
+      } else {
+        const field = document.createElement("textarea");
+        field.value = number; document.body.appendChild(field); field.select();
+        document.execCommand("copy"); field.remove(); alert("تم نسخ رقم InstaPay");
+      }
+    }
+  </script>
+</body>
+</html>
